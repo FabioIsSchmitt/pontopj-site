@@ -32,14 +32,41 @@
     <div>Teste grátis de 10 dias. Depois,</div>
     <div class="valor">R$ 19,90 por mês</div>
     <div style="color:var(--ink-dim)">pago por Pix dentro do app, sem cartão e sem fidelidade.</div>
+    <a class="botao" href="#baixar" style="margin-top:14px">Baixar o app</a>
   </div>
 
-  <h2>Como conseguir o app</h2>
-  <p class="texto">O Ponto PJ é para Android e é distribuído diretamente, fora da Play Store.
-    Peça o link de instalação por e-mail: <a href="mailto:pontopj.app@gmail.com">pontopj.app@gmail.com</a>.</p>
+  <h2 id="baixar">Baixar o app</h2>
+  <p class="texto">Para Android 8 ou mais novo. O Ponto PJ é distribuído direto por aqui, fora da Play Store.</p>
+  <a class="botao" href="https://github.com/FabioIsSchmitt/pontopj-site/releases/latest/download/PontoPJ.apk">
+    Baixar o Ponto PJ para Android</a>
+  <div class="sub-botao" id="versao">APK de 2,5 MB</div>
+
+  <h2>Como instalar</h2>
+  <ol class="passos">
+    <li>Toque em <b>Baixar</b> e, quando terminar, abra o arquivo <b>PontoPJ.apk</b> (pela notificação ou pela pasta Downloads).</li>
+    <li>Se o Android avisar que não pode instalar apps desta fonte, toque em <b>Configurações</b>, ligue
+      <b>Permitir desta fonte</b> e volte.</li>
+    <li>Se aparecer o aviso do <b>Play Protect</b> de app não verificado, toque em <b>Mais detalhes</b> e em
+      <b>Instalar mesmo assim</b>. O aviso aparece porque o app não está na Play Store.</li>
+    <li>Abra o Ponto PJ e entre com a sua conta Google. O teste grátis começa na hora.</li>
+  </ol>
+  <p class="texto">Já tem o app? Baixar e instalar por cima atualiza para a versão nova, sem perder os seus registros.</p>
+  <p class="texto">Dúvidas: <a href="mailto:pontopj.app@gmail.com">pontopj.app@gmail.com</a>.</p>
 
   <footer>Ponto PJ · <a href="mailto:pontopj.app@gmail.com">pontopj.app@gmail.com</a> ·
     <a href="privacidade.html">Política de privacidade</a></footer>
 </div>
+<script>
+  // versão mais recente publicada (sem internet ou sem resposta, fica só o tamanho)
+  fetch('https://api.github.com/repos/FabioIsSchmitt/pontopj-site/releases/latest')
+    .then(function (r) { return r.json(); })
+    .then(function (r) {
+      var apk = (r.assets || []).filter(function (a) { return a.name === 'PontoPJ.apk'; })[0];
+      if (!r.tag_name || !apk) return;
+      var mb = (apk.size / 1048576).toFixed(1).replace('.', ',');
+      document.getElementById('versao').textContent = 'Versão ' + r.tag_name.replace(/^v/, '') + ' · APK de ' + mb + ' MB';
+    })
+    .catch(function () {});
+</script>
 </body>
 </html>

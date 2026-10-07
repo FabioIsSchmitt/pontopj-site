@@ -33,5 +33,11 @@ h2 { font-size: 20px; margin: 32px 0 8px; }
 .preco { background: var(--panel2); border-radius: 14px; padding: 20px; margin: 32px 0; }
 .preco .valor { font-family: "Space Grotesk", system-ui, sans-serif; font-size: 28px; font-weight: 700; color: var(--run); }
 .texto p, .texto li { color: #D5DBE3; }
+.botao { display: inline-block; background: var(--run); color: #08130F; font-weight: 700; text-decoration: none;
+  padding: 14px 22px; border-radius: 12px; margin-top: 8px; }
+.botao:hover { filter: brightness(1.08); }
+.sub-botao { color: var(--ink-dim); font-size: 14px; margin-top: 8px; }
+.passos { padding-left: 22px; color: #D5DBE3; }
+.passos li { margin-bottom: 8px; }
 .texto ul { padding-left: 20px; }
 footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--ink-dim); font-size: 14px; }
