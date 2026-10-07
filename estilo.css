@@ -1,0 +1,37 @@
+/* Ponto PJ: mesmas cores do app (res/values/colors.xml) */
+:root {
+  --bg: #141B26;
+  --panel: #1C2532;
+  --panel2: #232E3D;
+  --line: #2F3B4C;
+  --ink: #EEF1F5;
+  --ink-dim: #9AA7B8;
+  --run: #10B981;
+  --amber: #E0A13A;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--bg); color: var(--ink);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 16px; line-height: 1.6;
+}
+a { color: var(--run); }
+.pagina { max-width: 760px; margin: 0 auto; padding: 24px 16px 48px; }
+header { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.logo { font-family: "Space Grotesk", system-ui, sans-serif; font-weight: 700; font-size: 26px; text-decoration: none; color: var(--ink); }
+.logo span { color: var(--run); }
+nav a { color: var(--ink-dim); text-decoration: none; margin-left: 16px; font-size: 15px; }
+nav a:hover, nav a.atual { color: var(--ink); }
+h1, h2 { font-family: "Space Grotesk", system-ui, sans-serif; line-height: 1.2; }
+h1 { font-size: 36px; margin: 48px 0 12px; }
+h2 { font-size: 20px; margin: 32px 0 8px; }
+.destaque { color: var(--ink-dim); font-size: 18px; max-width: 600px; }
+.cartoes { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px; margin: 32px 0; }
+.cartao { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 16px 18px; }
+.cartao b { display: block; margin-bottom: 4px; }
+.cartao p { margin: 0; color: var(--ink-dim); font-size: 15px; }
+.preco { background: var(--panel2); border-radius: 14px; padding: 20px; margin: 32px 0; }
+.preco .valor { font-family: "Space Grotesk", system-ui, sans-serif; font-size: 28px; font-weight: 700; color: var(--run); }
+.texto p, .texto li { color: #D5DBE3; }
+.texto ul { padding-left: 20px; }
+footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--ink-dim); font-size: 14px; }
