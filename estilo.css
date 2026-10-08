@@ -17,8 +17,8 @@ section { padding: 80px 0; }
 .alt { background: var(--bg2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 h1, h2, h3 { font-family: var(--titulo); line-height: 1.15; letter-spacing: -0.02em; margin: 0; }
 h2 { font-size: clamp(28px, 4vw, 38px); margin-bottom: 12px; }
-.centro { text-align: center; max-width: 680px; margin: 0 auto 48px; }
-.centro p { color: var(--ink-dim); font-size: 18px; margin: 0; }
+.centro { text-align: center; max-width: 760px; margin: 0 auto 48px; }
+.centro p { color: var(--ink-dim); font-size: 18px; margin: 0; text-wrap: balance; }
 .selo { display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; border-radius: 999px; font-size: 13px; font-weight: 600;
   background: var(--run-dim); color: var(--run); border: 1px solid rgba(16,185,129,.35); margin-bottom: 20px; }
 .selo .ponto { width: 8px; height: 8px; border-radius: 50%; background: var(--run); animation: pulsa 1.6s ease-in-out infinite; }
