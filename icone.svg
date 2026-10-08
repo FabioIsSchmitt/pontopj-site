@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="18 18 72 72">
+  <!-- Ícone do app (res/drawable/ic_launcher_foreground.xml sobre @color/icone_fundo) -->
+  <defs>
+    <linearGradient id="p" gradientUnits="userSpaceOnUse" x1="0" y1="64" x2="0" y2="167">
+      <stop offset="0" stop-color="#02DBA7"/>
+      <stop offset="1" stop-color="#01E5B2"/>
+    </linearGradient>
+  </defs>
+  <rect x="18" y="18" width="72" height="72" rx="17" fill="#081522"/>
+  <g transform="translate(7.17 12.31) scale(0.3673)">
+    <path fill="url(#p)" d="M73,70 A6,6 0 0 1 79,64 L128,64 A21,21 0 0 1 149,85 L149,104 A23,23 0 0 1 126,127 L100.5,127 L100.5,147 A20,20 0 0 1 80.5,167 L77,167 A4,4 0 0 1 73,163 L73,103.5 L117,103.5 A7,7 0 0 0 117,89.5 L81,89.5 A8,8 0 0 1 73,81.5 Z"/>
+    <path fill="#FEFEFE" d="M161,78 A4,4 0 0 1 165,74 L178,74 A4,4 0 0 1 182,78 L182,137 A30,30 0 0 1 152,167 L121,167 A4,4 0 0 1 117,163 L117,145 A4,4 0 0 1 121,141 L148,141 A13,13 0 0 0 161,128 Z"/>
+  </g>
+</svg>
