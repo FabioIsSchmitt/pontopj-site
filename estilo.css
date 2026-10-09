@@ -3,7 +3,7 @@
   --bg: #141B26; --bg2: #10161F; --panel: #1C2532; --panel2: #232E3D; --line: #2F3B4C;
   --ink: #EEF1F5; --ink-dim: #9AA7B8; --ink-soft: #C9D1DC;
   --run: #10B981; --run-dim: #0D3D31; --stop: #E2574C; --stop-dim: #4A2320;
-  --amber: #E0A13A; --amber-dim: #4A3A1A;
+  --amber: #E0A13A; --amber-dim: #4A3A1A; --pilula: #2C384A;
   --titulo: "Space Grotesk", system-ui, sans-serif;
   --mono: "Noto Sans Mono", ui-monospace, "Droid Sans Mono", monospace;
 }
@@ -86,7 +86,11 @@ header nav a:hover { color: var(--ink); }
   background: var(--panel); border: 1px solid var(--line); border-bottom: 0; border-radius: 10px 10px 0 0;
   font: 9px var(--mono); letter-spacing: .12em; color: var(--ink); text-transform: uppercase; }
 .aba-data svg { width: 10.5px; height: 10.5px; fill: var(--run); }
-.aba-data + .relogio { border-top-left-radius: 0; }
+.topo-relogio { display: flex; align-items: center; }
+.topo-relogio + .relogio { border-top-left-radius: 0; }
+/* Horas de hoje à direita da aba da data */
+.hoje { margin-left: auto; padding-right: 3px; font: 9px var(--mono); letter-spacing: .12em; color: var(--ink-dim); }
+.hoje b { margin-left: 6px; font-size: 11px; font-weight: 400; letter-spacing: 0; color: var(--ink); }
 .app-topo .botoes { margin-left: auto; display: flex; gap: 14px; padding-right: 6px; }
 .app-topo .botoes svg { width: 19px; height: 19px; fill: var(--ink-dim); }
 .card { background: var(--panel); border: 1px solid var(--line); border-radius: 13px; }
@@ -99,14 +103,13 @@ header nav a:hover { color: var(--ink); }
 .punch { flex: 1.8; background: var(--stop-dim); border: 2px solid var(--stop); border-radius: 13px; padding: 7px 8px; text-align: center; }
 .punch small { display: block; font-size: 10px; color: var(--ink-dim); }
 .punch b { font: 700 23px var(--mono); }
-.locais { display: flex; margin-top: 16px; }
-.locais div { flex: 1; text-align: center; border: 2px solid var(--line); padding: 7px 2px; font-size: 11px; color: var(--ink-dim); line-height: 1.35; }
-.locais div + div { margin-left: -2px; }
-.locais div:first-child { border-radius: 13px 0 0 13px; }
-.locais div:last-child { border-radius: 0 13px 13px 0; }
+/* Local/Tipo: trilho escuro; o escolhido é uma pílula clara com o ícone verde e o nome em negrito */
+.locais { display: flex; gap: 3px; margin-top: 16px; padding: 3px; background: var(--bg); border-radius: 12px; }
+.locais div { flex: 1; text-align: center; padding: 7px 2px; border-radius: 9px; font-size: 11px; color: var(--ink-dim); line-height: 1.35; }
 .locais svg { display: block; margin: 0 auto 2px; width: 17px; height: 17px; fill: currentColor; }
 .locais em { font: normal 9px var(--mono); }
-.locais .on { background: var(--amber); border-color: var(--amber); color: var(--bg); position: relative; }
+.locais .on { background: var(--pilula); color: var(--ink); font-weight: 700; }
+.locais .on svg { fill: var(--run); }
 .meses { display: flex; align-items: center; gap: 6px; margin-top: 12px; }
 .chip { font: 11px var(--mono); padding: 5px 11px; border-radius: 999px; background: var(--panel2); color: var(--ink-dim); }
 .chip.on { background: var(--run); color: var(--bg); }
@@ -124,7 +127,7 @@ header nav a:hover { color: var(--ink); }
 .reg b { display: block; color: var(--ink); font-size: 12px; margin-bottom: 2px; }
 .reg .l { display: flex; justify-content: space-between; align-items: center; }
 .reg .v { font-family: var(--mono); color: var(--run); }
-.reg .d { font: 12px var(--mono); color: var(--amber); }
+.reg .d { font: 700 12px var(--mono); color: var(--amber); }
 
 /* Recursos */
 .grade { display: grid; gap: 16px; }
@@ -220,6 +223,7 @@ header nav a.atual { color: var(--ink); }
 .sem-gap .barra-status .icones svg + svg { margin-left: 5px; }
 .sem-gap .app-nome img { margin-left: 6.5px; }
 .sem-gap .aba-data span { margin: 0 6px; }
+.sem-gap .locais > * + * { margin-left: 3px; }
 .sem-gap .app-topo .botoes svg + svg { margin-left: 14px; }
 .sem-gap .relogio .linha > * + * { margin-left: 7px; }
 .sem-gap .meses > * + * { margin-left: 6px; }

@@ -17,7 +17,7 @@
     document.documentElement.appendChild(d); var tem = d.scrollHeight === 1; d.parentNode.removeChild(d);
     if (!tem) document.documentElement.className += ' sem-gap'; })();
 </script>
-<link rel="stylesheet" href="estilo.css?v=9">
+<link rel="stylesheet" href="estilo.css?v=10">
 </head>
 <body>
 
@@ -92,7 +92,10 @@
             <div class="botoes"><svg><use href="#i-eye-off"/></svg><svg><use href="#i-settings"/></svg></div>
           </div>
 
-          <div class="aba-data"><svg><use href="#i-calendar"/></svg><span id="data">qui · 08 out</span><svg><use href="#i-lapis"/></svg></div>
+          <div class="topo-relogio">
+            <div class="aba-data"><svg><use href="#i-calendar"/></svg><span id="data">qui · 08 out</span><svg><use href="#i-lapis"/></svg></div>
+            <span class="hoje">HOJE<b id="hoje">01h39</b></span>
+          </div>
           <div class="card relogio">
             <div class="linha">
               <div class="inicio"><small>Início<svg><use href="#i-lapis"/></svg></small><b>08:02</b></div>
@@ -271,6 +274,8 @@
       var d = new Date();
       document.getElementById('hora').textContent = dois(d.getHours()) + ':' + dois(d.getMinutes());
       document.getElementById('cronometro').textContent = dois(Math.floor(seg / 3600)) + ':' + dois(Math.floor(seg / 60) % 60) + ':' + dois(seg % 60);
+      // hoje: nenhum registro do dia na tela de exemplo, só o cronômetro rodando
+      document.getElementById('hoje').textContent = dois(Math.floor(seg / 3600)) + 'h' + dois(Math.floor(seg / 60) % 60);
       seg++;
     }
     tique();
