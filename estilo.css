@@ -81,6 +81,7 @@ header nav a:hover { color: var(--ink); }
 .relogio .linha { display: flex; gap: 7px; }
 .inicio { flex: 1; background: var(--panel2); border: 1px solid var(--line); border-radius: 13px; padding: 7px 9px; display: flex; flex-direction: column; justify-content: center; }
 .inicio small { font-size: 10px; color: var(--ink-dim); }
+.inicio small svg { width: 10px; height: 10px; margin-left: 4px; vertical-align: -1px; fill: var(--run); }
 .inicio b { font: 700 19px var(--mono); color: var(--amber); }
 .punch { flex: 1.8; background: var(--stop-dim); border: 2px solid var(--stop); border-radius: 13px; padding: 7px 8px; text-align: center; }
 .punch small { display: block; font-size: 10px; color: var(--ink-dim); }
