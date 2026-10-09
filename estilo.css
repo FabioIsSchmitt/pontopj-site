@@ -44,15 +44,28 @@ header nav a:hover { color: var(--ink); }
 
 /* Abertura */
 .abertura { position: relative; overflow: hidden; padding: 56px 0 80px; }
-.abertura::before { content: ""; position: absolute; inset: -20% -10% auto auto; width: 720px; height: 720px; pointer-events: none;
+.abertura::before { content: ""; position: absolute; top: -20%; right: -10%; width: 720px; height: 720px; pointer-events: none;
   background: radial-gradient(circle, rgba(16,185,129,.16), transparent 65%); }
-.abertura .largura { position: relative; display: grid; gap: 56px; align-items: center; }
-@media (min-width: 960px) { .abertura .largura { grid-template-columns: 1.25fr 1fr; } }
+/* Celular: título e frase curta, a tela do app e depois os botões (o Baixar também fica no cabeçalho).
+   Computador: texto e botões à esquerda, o app à direita */
+.abertura .largura { position: relative; display: grid; grid-gap: 28px; gap: 28px; grid-template-areas: "texto" "celular" "acoes"; }
+.abertura-texto { grid-area: texto; }
+.abertura-acoes { grid-area: acoes; }
+.abertura .celular { grid-area: celular; }
+.abertura .lead .longo { display: none; }
+@media (min-width: 960px) {
+  .abertura .largura { grid-template-columns: 1.25fr 1fr; grid-template-areas: "texto celular" "acoes celular"; grid-column-gap: 56px; column-gap: 56px; grid-row-gap: 0; row-gap: 0; }
+  .abertura-texto { align-self: end; }
+  .abertura-acoes { align-self: start; }
+  .abertura .lead .longo { display: inline; }
+  .abertura .lead .curto { display: none; }
+}
 .abertura h1 { font-size: clamp(36px, 6vw, 58px); margin-bottom: 20px; }
 .abertura h1 span { color: var(--run); }
 .abertura .lead { color: var(--ink-dim); font-size: 19px; max-width: 580px; margin: 0 0 32px; }
 .acoes { display: flex; flex-wrap: wrap; gap: 12px; }
 .nota { color: var(--ink-dim); font-size: 14px; margin-top: 14px; }
+@media (max-width: 959px) { .abertura { padding-top: 28px; } .abertura .selo { margin-bottom: 14px; } .abertura h1 { margin-bottom: 12px; } .abertura .lead { font-size: 17px; margin-bottom: 0; } }
 
 /* Celular: a tela principal do app (activity_main.xml) */
 .celular { justify-self: center; width: 100%; max-width: 340px; background: #0A0F16; border: 1px solid #344155; border-radius: 44px; padding: 10px;
@@ -196,3 +209,26 @@ header nav a.atual { color: var(--ink); }
   .planilha th, .planilha td { padding: 7px 6px; }
   .drive { padding: 24px 16px; }
 }
+
+/* Sem gap em flex (navegadores antigos, ver o script no <head>): o mesmo espaço com margens */
+.sem-gap .selo .ponto { margin-right: 8px; }
+.sem-gap .botao > svg { margin-right: 10px; }
+.sem-gap .marca img { margin-left: 8px; }
+.sem-gap header nav a + a { margin-left: 28px; }
+.sem-gap .acoes { margin-bottom: -12px; }
+.sem-gap .acoes > * { margin: 0 12px 12px 0; }
+.sem-gap .barra-status .icones svg + svg { margin-left: 5px; }
+.sem-gap .app-nome img { margin-left: 6.5px; }
+.sem-gap .aba-data span { margin: 0 6px; }
+.sem-gap .app-topo .botoes svg + svg { margin-left: 14px; }
+.sem-gap .relogio .linha > * + * { margin-left: 7px; }
+.sem-gap .meses > * + * { margin-left: 6px; }
+.sem-gap .meses > .enviar { margin-left: auto; }
+.sem-gap .chip.enviar svg { margin-right: 5px; }
+.sem-gap .lista li > svg { margin-right: 10px; }
+.sem-gap .planilha .topo svg { margin-right: 8px; }
+.sem-gap .planilha .abas > * + * { margin-left: 2px; }
+.sem-gap .atualiza > * + * { margin-left: 14px; }
+.sem-gap footer .largura > * { margin: 8px 28px 8px 0; }
+.sem-gap footer .links a { margin: 6px 24px 6px 0; }
+.sem-gap footer a > svg { margin-right: 6px; }
