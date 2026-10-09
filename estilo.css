@@ -66,9 +66,14 @@ header nav a:hover { color: var(--ink); }
 .app { padding: 4px 14px 14px; }
 .app-topo { display: flex; align-items: center; padding: 10px 0 8px; }
 .app-nome { font-family: var(--titulo); font-weight: 700; font-size: 23px; letter-spacing: -0.02em; line-height: 1; }
-.app-nome span { color: var(--run); margin-left: 5px; }
-.app-data { display: flex; align-items: center; gap: 5px; margin-top: 4px; font: 9px var(--mono); letter-spacing: .12em; color: var(--ink-dim); text-transform: uppercase; }
-.app-data svg { width: 10px; height: 10px; fill: var(--run); }
+.app-nome { display: flex; align-items: center; gap: 6.5px; }
+.app-nome img { height: 0.75em; width: auto; }
+/* Data de hoje numa aba presa ao cartão do relógio, como no app */
+.aba-data { display: inline-flex; align-items: center; gap: 6px; position: relative; z-index: 1; margin-bottom: -1px; padding: 6px 10px 7px;
+  background: var(--panel); border: 1px solid var(--line); border-bottom: 0; border-radius: 10px 10px 0 0;
+  font: 9px var(--mono); letter-spacing: .12em; color: var(--ink); text-transform: uppercase; }
+.aba-data svg { width: 10.5px; height: 10.5px; fill: var(--run); }
+.aba-data + .relogio { border-top-left-radius: 0; }
 .app-topo .botoes { margin-left: auto; display: flex; gap: 14px; padding-right: 6px; }
 .app-topo .botoes svg { width: 19px; height: 19px; fill: var(--ink-dim); }
 .card { background: var(--panel); border: 1px solid var(--line); border-radius: 13px; }
