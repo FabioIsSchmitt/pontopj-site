@@ -17,7 +17,7 @@
     document.documentElement.appendChild(d); var tem = d.scrollHeight === 1; d.parentNode.removeChild(d);
     if (!tem) document.documentElement.className += ' sem-gap'; })();
 </script>
-<link rel="stylesheet" href="estilo.css?v=10">
+<link rel="stylesheet" href="estilo.css?v=11">
 </head>
 <body>
 
@@ -92,42 +92,45 @@
             <div class="botoes"><svg><use href="#i-eye-off"/></svg><svg><use href="#i-settings"/></svg></div>
           </div>
 
-          <div class="topo-relogio">
-            <div class="aba-data"><svg><use href="#i-calendar"/></svg><span id="data">qui · 08 out</span><svg><use href="#i-lapis"/></svg></div>
-            <span class="hoje">HOJE<b id="hoje">01h39</b></span>
+          <div class="data"><svg><use href="#i-calendar"/></svg><span id="data">qui · 08 out</span></div>
+
+          <div class="relogio">
+            <div class="inicio"><small>Início<svg><use href="#i-lapis"/></svg></small><b>08:02</b></div>
+            <div class="punch"><small>&#x25A0;&#xFE0E; Toque para parar</small><b id="cronometro">01:39:12</b></div>
           </div>
-          <div class="card relogio">
-            <div class="linha">
-              <div class="inicio"><small>Início<svg><use href="#i-lapis"/></svg></small><b>08:02</b></div>
-              <div class="punch"><small>&#x25A0;&#xFE0E; Toque para parar</small><b id="cronometro">01:39:12</b></div>
-            </div>
-            <div class="locais">
-              <div><svg><use href="#i-home"/></svg>Home Office<br><em>R$ 80,00/h</em></div>
-              <div class="on"><svg><use href="#i-business"/></svg>Sede<br><em>R$ 85,00/h</em></div>
-              <div><svg><use href="#i-place"/></svg>Externo<br><em>R$ 95,00/h</em></div>
-            </div>
+          <div class="locais">
+            <div><svg><use href="#i-home"/></svg>Home Office<em>R$ 80,00/h</em></div>
+            <div class="on"><svg><use href="#i-business"/></svg>Sede<em>R$ 85,00/h</em></div>
+            <div><svg><use href="#i-place"/></svg>Externo<em>R$ 95,00/h</em></div>
           </div>
 
-          <div class="meses">
+          <div class="card meses">
             <span class="chip">AGO-26</span><span class="chip">SET-26</span><span class="chip on">OUT-26</span>
             <span class="chip enviar"><svg><use href="#i-send"/></svg>Enviar</span>
           </div>
 
           <div class="card mes">
-            <div><small>OUTUBRO ATÉ AGORA</small><span class="h">41:20 h</span></div>
-            <div class="valor"><b>R$ 3.512,50</b><small>previsão R$ 15.640</small></div>
+            <div class="topo"><small>OUTUBRO · ATÉ AGORA</small><small>HOJE<b id="hoje">1h39</b></small></div>
+            <div class="meio"><span class="h">41:20<i>h</i></span>
+              <div class="valor"><b>R$ 3.512,50</b><small>previsão R$ 15.640</small></div></div>
+            <div class="barra"><span></span></div>
           </div>
 
-          <div class="hist"><b>Histórico</b><span>Sincronizado</span></div>
-          <div class="card reg">
-            <b>Projeto Faturamento · TI</b>
-            <div class="l"><span>07/10 ter</span><span>13:15 – 18:00</span></div>
-            <div class="l"><span class="v">R$ 403,75 · Sede</span><span class="d">04:45:00</span></div>
-          </div>
-          <div class="card reg">
-            <b>Suporte ao cliente</b>
-            <div class="l"><span>07/10 ter</span><span>08:00 – 12:00</span></div>
-            <div class="l"><span class="v">R$ 320,00 · Home Office</span><span class="d">04:00:00</span></div>
+          <div class="card hist">
+            <div class="hist-topo"><b><svg><use href="#i-sync"/></svg>Histórico</b><span>Sincronizado</span></div>
+            <div class="dia">
+              <div class="dia-topo"><b>07/10 TER</b><b>8h45</b></div>
+              <div class="reg">
+                <div class="cc">Projeto Faturamento · TI</div>
+                <div class="l"><span class="v">R$ 403,75 · Sede</span><span>13:15 – 18:00</span></div>
+                <div class="l"><span></span><span class="d">04:45:00</span></div>
+              </div>
+              <div class="reg">
+                <div class="cc">Suporte ao cliente</div>
+                <div class="l"><span class="v">R$ 320,00 · Home Office</span><span>08:00 – 12:00</span></div>
+                <div class="l"><span></span><span class="d">04:00:00</span></div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -160,9 +163,10 @@
       <div class="recurso ambar"><div class="ic"><svg class="i"><use href="#i-lock"/></svg></div>
         <h3>Privacidade</h3>
         <p>Esconda os valores com um toque e trave o app com a digital, o PIN, a senha ou o padrão do celular.</p></div>
-      <div class="recurso"><div class="ic"><svg class="i"><use href="#i-sync"/></svg></div>
-        <h3>Funciona sem internet</h3>
-        <p>Sem internet? Registre normalmente: o app guarda no aparelho e manda para a planilha assim que a internet voltar.</p></div>
+      <div class="recurso"><div class="ic"><svg class="i"><use href="#i-place"/></svg></div>
+        <h3>Esqueceu de iniciar? O app inicia</h3>
+        <p>Ao chegar na sede, o cronômetro começa sozinho, no horário em que você chegou. Ao sair, ele para. O app pede a localização ao ligar, e ela fica só no seu celular.</p>
+        <span class="etiqueta">Sob liberação</span></div>
       <div class="recurso ambar"><div class="ic"><svg class="i"><use href="#i-business"/></svg></div>
         <h3>Configuração da empresa</h3>
         <p>Peça a configuração da sua empresa e receba os centros de custo e o e-mail de quem aprova as suas horas já prontos, sem digitar nada.</p></div>
@@ -275,7 +279,7 @@
       document.getElementById('hora').textContent = dois(d.getHours()) + ':' + dois(d.getMinutes());
       document.getElementById('cronometro').textContent = dois(Math.floor(seg / 3600)) + ':' + dois(Math.floor(seg / 60) % 60) + ':' + dois(seg % 60);
       // hoje: nenhum registro do dia na tela de exemplo, só o cronômetro rodando
-      document.getElementById('hoje').textContent = dois(Math.floor(seg / 3600)) + 'h' + dois(Math.floor(seg / 60) % 60);
+      document.getElementById('hoje').textContent = Math.floor(seg / 3600) + 'h' + dois(Math.floor(seg / 60) % 60);
       seg++;
     }
     tique();
