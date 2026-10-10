@@ -65,10 +65,11 @@ header nav a:hover { color: var(--ink); }
 .abertura .lead { color: var(--ink-dim); font-size: 19px; max-width: 580px; margin: 0 0 32px; }
 .acoes { display: flex; flex-wrap: wrap; gap: 12px; }
 .nota { color: var(--ink-dim); font-size: 14px; margin-top: 14px; }
-/* Celular: Baixar e Como instalar com a largura toda, um embaixo do outro, e a versão centralizada */
+/* Celular: Baixar e Como instalar com a largura toda, um embaixo do outro, e a versão centralizada;
+   o Baixar do fim da página também com a largura toda, como os cartões em volta */
 @media (max-width: 959px) {
   .abertura .acoes { flex-direction: column; }
-  .abertura .acoes .botao { width: 100%; }
+  .abertura .acoes .botao, .baixar .botao { width: 100%; }
   .abertura .nota.versao { text-align: center; }
   .sem-gap .abertura .acoes > * { margin-right: 0; }
 }
