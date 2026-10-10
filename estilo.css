@@ -89,18 +89,17 @@ header nav a:hover { color: var(--ink); }
 .data { display: flex; align-items: center; gap: 6px; padding: 7px 10px; background: var(--item); border: 1px solid var(--line); border-radius: 10px;
   font: 9px var(--mono); letter-spacing: .12em; color: var(--ink); text-transform: uppercase; }
 .data svg { width: 10.5px; height: 10.5px; fill: var(--run); }
-/* Início + relógio, alinhados com os locais embaixo (1 : 2) */
-.relogio { display: flex; gap: 7px; margin-top: 10px; }
-.inicio { flex: 1; background: var(--panel2); border: 1px solid var(--line); border-radius: 13px; padding: 7px 9px; display: flex; flex-direction: column; justify-content: center; }
+/* Início + relógio na mesma grade de 3 colunas dos locais: o Início alinha com Home Office e o relógio com Sede + Externo */
+.relogio, .locais { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); grid-gap: 7px; gap: 7px; margin-top: 10px; }
+.inicio { background: var(--panel2); border: 1px solid var(--line); border-radius: 13px; padding: 7px 9px; display: flex; flex-direction: column; justify-content: center; }
 .inicio small { font-size: 10px; color: var(--ink-dim); }
 .inicio small svg { width: 10px; height: 10px; margin-left: 4px; vertical-align: -1px; fill: var(--run); }
 .inicio b { font: 700 19px var(--mono); color: var(--amber); }
-.punch { flex: 2; background: var(--stop-dim); border: 2px solid var(--stop); border-radius: 13px; padding: 7px 8px; text-align: center; }
+.punch { grid-column: span 2; background: var(--stop-dim); border: 2px solid var(--stop); border-radius: 13px; padding: 7px 8px; text-align: center; }
 .punch small { display: block; font-size: 10px; color: var(--ink-dim); }
 .punch b { font: 700 23px var(--mono); }
 /* Local/Tipo: três cartões; o escolhido com borda verde */
-.locais { display: flex; gap: 7px; margin-top: 10px; }
-.locais div { flex: 1; text-align: center; padding: 7px 2px; border-radius: 12px; font-size: 11px; color: var(--ink-dim); line-height: 1.35;
+.locais div { text-align: center; padding: 7px 2px; border-radius: 12px; font-size: 11px; color: var(--ink-dim); line-height: 1.35;
   background: var(--panel); border: 1px solid var(--line); }
 .locais svg { display: block; margin: 0 auto 2px; width: 17px; height: 17px; fill: currentColor; }
 .locais em { display: block; font: normal 9px var(--mono); }
@@ -235,9 +234,7 @@ header nav a.atual { color: var(--ink); }
 .sem-gap .barra-status .icones svg + svg { margin-left: 5px; }
 .sem-gap .app-nome img { margin-left: 6.5px; }
 .sem-gap .data span { margin-left: 6px; }
-.sem-gap .locais > * + * { margin-left: 7px; }
 .sem-gap .app-topo .botoes svg + svg { margin-left: 14px; }
-.sem-gap .relogio > * + * { margin-left: 7px; }
 .sem-gap .meses > * + * { margin-left: 4px; }
 .sem-gap .meses > .enviar { margin-left: auto; }
 .sem-gap .chip.enviar svg { margin-right: 5px; }
