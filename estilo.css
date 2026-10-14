@@ -96,9 +96,10 @@ header nav a:hover { color: var(--ink); }
 .card { background: var(--degrade); border: 1px solid var(--line); border-radius: 13px; }
 /* seta "dá para tocar", como no app */
 .tela .seta { width: 13px; height: 13px; fill: var(--ink-dim); flex: none; }
-/* Data de hoje numa barra própria: calendário num quadradinho verde, data com o ano e a seta */
+/* Data de hoje numa barra própria: calendário num quadradinho verde, data por extenso e a seta */
 .data { display: flex; align-items: center; gap: 8px; padding: 5px 8px 5px 5px; background: var(--degrade); border: 1px solid var(--line); border-radius: 11px;
-  font-size: 9.5px; font-weight: 700; letter-spacing: .08em; color: var(--ink); text-transform: uppercase; }
+  font-size: 11px; color: var(--ink); white-space: nowrap; }
+.data b { font-weight: 700; }
 .data i { width: 20px; height: 20px; border-radius: 6px; background: rgba(16,185,129,.15); display: flex; align-items: center; justify-content: center; }
 .data i svg { width: 11px; height: 11px; fill: var(--run); }
 .data span { flex: 1; }
@@ -155,7 +156,9 @@ header nav a:hover { color: var(--ink); }
 .hist-topo b svg { width: 12px; height: 12px; fill: var(--run); margin-right: 5px; vertical-align: -2px; }
 .hist-topo span { font-size: 9px; color: var(--ink-dim); }
 .dia { background: var(--item); border: 1px solid var(--line); border-radius: 10px; }
-.dia-topo { display: flex; justify-content: space-between; padding: 6px 10px; border-bottom: 1px solid var(--line); font-size: 11px; }
+/* cabeçalho do dia: degradê numa moldura no azul dos registros, como no app */
+.dia-topo { display: flex; justify-content: space-between; padding: 6px 10px; border-bottom: 1px solid var(--line); font-size: 11px;
+  background: linear-gradient(#1B2742, #111A2C); box-shadow: inset 0 0 0 2.5px var(--item); border-radius: 10px 10px 0 0; }
 .reg { padding: 8px 10px; font-size: 10px; color: var(--ink-dim); display: grid; grid-template-columns: minmax(0, 1fr) auto; grid-column-gap: 5px; column-gap: 5px; align-items: center; }
 .reg .cc { grid-column: 1 / 3; }
 .reg .seta { grid-column: 2; grid-row: 2 / 4; }
