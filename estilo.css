@@ -79,6 +79,7 @@ header nav a:hover { color: var(--ink); }
 .celular { justify-self: center; width: 100%; max-width: 340px; background: #0A0F16; border: 1px solid #344155; border-radius: 44px; padding: 10px;
   box-shadow: 0 40px 80px -30px rgba(0,0,0,.8), 0 0 0 6px #1A222E; }
 .tela { --bg: #0B0F17; --panel: #131B2E; --panel2: #1B253A; --item: #0F1625; --line: #1E293B; --ink-dim: #94A3B8;
+  --degrade: linear-gradient(#17213A, #0F1624);
   background: var(--bg); border-radius: 35px; overflow: hidden; height: 640px; position: relative; font-family: Roboto, system-ui, sans-serif; }
 .tela::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 70px; background: linear-gradient(transparent, var(--bg)); }
 .barra-status { display: flex; justify-content: space-between; align-items: center; padding: 12px 22px 0; font-size: 12px; color: var(--ink); }
@@ -92,35 +93,49 @@ header nav a:hover { color: var(--ink); }
 .app-nome img { height: 0.75em; width: auto; }
 .app-topo .botoes { margin-left: auto; display: flex; gap: 14px; padding-right: 6px; }
 .app-topo .botoes svg { width: 19px; height: 19px; fill: var(--ink-dim); }
-.card { background: var(--panel); border: 1px solid var(--line); border-radius: 13px; }
-/* Data de hoje numa barra própria */
-.data { display: flex; align-items: center; gap: 6px; padding: 7px 10px; background: var(--item); border: 1px solid var(--line); border-radius: 10px;
-  font: 9px var(--mono); letter-spacing: .12em; color: var(--ink); text-transform: uppercase; }
-.data svg { width: 10.5px; height: 10.5px; fill: var(--run); }
-/* Início + relógio na mesma grade de 3 colunas dos locais: o Início alinha com Home Office e o relógio com Sede + Externo */
-.relogio, .locais { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); grid-gap: 7px; gap: 7px; margin-top: 10px; }
-/* Início e relógio com a altura dos cartões dos locais */
-.relogio { height: 63px; }
-.inicio { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 0 9px; display: flex; flex-direction: column; justify-content: center; }
-.inicio small { font-size: 10px; color: var(--ink-dim); }
-.inicio small svg { width: 10px; height: 10px; margin-left: 4px; vertical-align: -1px; fill: var(--run); }
-.inicio b { font: 700 19px var(--mono); color: var(--amber); }
-.punch { grid-column: span 2; background: var(--stop-dim); border: 2px solid var(--stop); border-radius: 13px; padding: 0 8px; text-align: center; display: flex; flex-direction: column; justify-content: center; }
-.punch small { display: block; font-size: 10px; color: var(--ink-dim); }
-.punch b { font: 700 23px/1.1 var(--mono); }
+.card { background: var(--degrade); border: 1px solid var(--line); border-radius: 13px; }
+/* seta "dá para tocar", como no app */
+.tela .seta { width: 13px; height: 13px; fill: var(--ink-dim); flex: none; }
+/* Data de hoje numa barra própria: calendário num quadradinho verde, data com o ano e a seta */
+.data { display: flex; align-items: center; gap: 8px; padding: 5px 8px 5px 5px; background: var(--degrade); border: 1px solid var(--line); border-radius: 11px;
+  font-size: 9.5px; font-weight: 700; letter-spacing: .08em; color: var(--ink); text-transform: uppercase; }
+.data i { width: 20px; height: 20px; border-radius: 6px; background: rgba(16,185,129,.15); display: flex; align-items: center; justify-content: center; }
+.data i svg { width: 11px; height: 11px; fill: var(--run); }
+.data span { flex: 1; }
+/* Rodando: Início e relógio dividem a largura ao meio; locais em três colunas */
+.relogio { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-gap: 7px; gap: 7px; margin-top: 10px; height: 60px; }
+.locais { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); grid-gap: 7px; gap: 7px; margin-top: 7px; }
+.inicio { background: linear-gradient(#10322B, #0B221E); border: 1px solid rgba(16,185,129,.45); border-radius: 12px; padding: 0 6px 0 9px;
+  display: flex; align-items: center; gap: 7px; }
+.inicio .ic { width: 27px; height: 27px; fill: var(--run); flex: none; }
+.inicio div { flex: 1; min-width: 0; }
+.inicio small { display: block; font-size: 9px; color: var(--ink-dim); }
+.inicio b { font: 700 17px var(--mono); color: var(--amber); }
+.punch { background: linear-gradient(#5A2C28, #3A1C1A); border: 2px solid var(--stop); border-radius: 13px; padding: 0 8px;
+  display: flex; align-items: center; gap: 8px; }
+.punch .anel { width: 27px; height: 27px; border-radius: 50%; border: 2px solid var(--stop); display: flex; align-items: center; justify-content: center; flex: none; box-sizing: border-box; }
+.punch .anel svg { width: 14px; height: 14px; fill: var(--stop); }
+.punch small { display: block; font-size: 9px; color: var(--ink-dim); white-space: nowrap; }
+.punch b { font: 700 17px/1.15 var(--mono); }
 /* Local/Tipo: três cartões; o escolhido com borda verde */
 .locais div { text-align: center; padding: 7px 2px; border-radius: 12px; font-size: 11px; color: var(--ink-dim); line-height: 1.35;
-  background: var(--panel); border: 1px solid var(--line); }
+  background: var(--degrade); border: 1px solid var(--line); }
 .locais svg { display: block; margin: 0 auto 2px; width: 17px; height: 17px; fill: currentColor; }
 .locais em { display: block; font: normal 9px var(--mono); }
 .locais .on { color: var(--ink); font-weight: 700; border-color: var(--run); }
 .locais .on svg { fill: var(--run); }
-/* Meses e o Enviar num cartão */
-.meses { display: flex; align-items: center; gap: 4px; margin-top: 10px; padding: 5px; }
-.chip { font: 11px var(--mono); padding: 5px 9px; border-radius: 999px; color: var(--ink-dim); }
-.chip.on { background: var(--run); color: var(--bg); }
-.chip.enviar { margin-left: auto; background: var(--amber); color: var(--bg); font-weight: 700; display: flex; align-items: center; gap: 5px; }
-.chip.enviar svg { width: 12px; height: 12px; fill: var(--bg); }
+/* Barra dos meses (dois à vista, o escolhido em branco com o calendário verde) e o Enviar, nas colunas dos locais */
+.linha-meses { display: grid; grid-template-columns: 2fr 1fr; grid-gap: 7px; gap: 7px; margin-top: 10px; }
+.meses { display: flex; align-items: center; height: 30px; padding: 0 3px; border-radius: 11px; position: relative; }
+.meses .ant { transform: rotate(180deg); }
+.meses .apagada { opacity: .3; }
+.meses::after { content: ""; position: absolute; left: 50%; top: 9px; width: 1px; height: 12px; background: #2C384A; }
+.mes-r { flex: 1; display: flex; align-items: center; justify-content: center; gap: 4px; font-size: 10px; letter-spacing: .04em; color: var(--ink-dim); }
+.mes-r svg { width: 11px; height: 11px; fill: var(--ink-dim); }
+.mes-r.on { color: var(--ink); font-weight: 700; }
+.mes-r.on svg { fill: var(--run); }
+.enviar { height: 30px; border-radius: 11px; display: flex; align-items: center; justify-content: center; gap: 6px; font-size: 11px; font-weight: 700; color: var(--ink); }
+.enviar svg { width: 12px; height: 12px; fill: var(--amber); }
 /* Cartão do mês: horas grandes, valor e previsão, HOJE à direita e a barra até a previsão */
 .mes { margin-top: 10px; padding: 11px 14px 12px; }
 .mes .topo { display: flex; justify-content: space-between; }
@@ -141,7 +156,9 @@ header nav a:hover { color: var(--ink); }
 .hist-topo span { font-size: 9px; color: var(--ink-dim); }
 .dia { background: var(--item); border: 1px solid var(--line); border-radius: 10px; }
 .dia-topo { display: flex; justify-content: space-between; padding: 6px 10px; border-bottom: 1px solid var(--line); font-size: 11px; }
-.reg { padding: 8px 10px; font-size: 10px; color: var(--ink-dim); }
+.reg { padding: 8px 10px; font-size: 10px; color: var(--ink-dim); display: grid; grid-template-columns: minmax(0, 1fr) auto; grid-column-gap: 5px; column-gap: 5px; align-items: center; }
+.reg .cc { grid-column: 1 / 3; }
+.reg .seta { grid-column: 2; grid-row: 2 / 4; }
 .reg + .reg { border-top: 1px solid var(--line); }
 .reg .cc { color: var(--ink); font-size: 11.5px; margin-bottom: 2px; }
 .reg .l { display: flex; justify-content: space-between; align-items: center; }
@@ -245,9 +262,6 @@ header nav a.atual { color: var(--ink); }
 .sem-gap .app-nome img { margin-left: 6.5px; }
 .sem-gap .data span { margin-left: 6px; }
 .sem-gap .app-topo .botoes svg + svg { margin-left: 14px; }
-.sem-gap .meses > * + * { margin-left: 4px; }
-.sem-gap .meses > .enviar { margin-left: auto; }
-.sem-gap .chip.enviar svg { margin-right: 5px; }
 .sem-gap .lista li > svg { margin-right: 10px; }
 .sem-gap .planilha .topo svg { margin-right: 8px; }
 .sem-gap .planilha .abas > * + * { margin-left: 2px; }
