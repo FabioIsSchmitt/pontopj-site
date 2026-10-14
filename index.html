@@ -94,7 +94,7 @@
             <div class="botoes"><svg><use href="#i-eye-off"/></svg><svg><use href="#i-settings"/></svg></div>
           </div>
 
-          <div class="data"><i><svg><use href="#i-calendar"/></svg></i><span id="data"><b>Quinta</b>, 8 de outubro de 2026</span><svg class="seta"><use href="#i-seta"/></svg></div>
+          <div class="data"><i><svg><use href="#i-calendar"/></svg></i><span id="data">Quinta, 8 de outubro de 2026</span><svg class="seta"><use href="#i-seta"/></svg></div>
 
           <div class="relogio">
             <div class="inicio"><svg class="ic"><use href="#i-schedule"/></svg><div><small>Início</small><b>08:02</b></div><svg class="seta"><use href="#i-seta"/></svg></div>
@@ -270,15 +270,12 @@
 <script>
   // relógio da tela de exemplo: a hora de agora, a data de hoje e o cronômetro andando
   (function () {
-    // como no app: "Quarta, 14 de outubro de 2026", com o dia da semana em negrito
+    // como no app: "Quarta, 14 de outubro de 2026"
     var dias = ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado'];
     var meses = ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'];
     var hoje = new Date();
-    var dataEl = document.getElementById('data');
-    dataEl.textContent = ', ' + hoje.getDate() + ' de ' + meses[hoje.getMonth()] + ' de ' + hoje.getFullYear();
-    var diaEl = document.createElement('b');
-    diaEl.textContent = dias[hoje.getDay()];
-    dataEl.insertBefore(diaEl, dataEl.firstChild);
+    document.getElementById('data').textContent =
+      dias[hoje.getDay()] + ', ' + hoje.getDate() + ' de ' + meses[hoje.getMonth()] + ' de ' + hoje.getFullYear();
     var seg = 1 * 3600 + 39 * 60 + 12;
     function dois(n) { return String(n).padStart(2, '0'); }
     function tique() {
