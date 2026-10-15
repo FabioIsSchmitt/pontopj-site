@@ -138,6 +138,8 @@ header nav a:hover { color: var(--ink); }
 .mes .barra { height: 3px; background: var(--bg); border-radius: 2px; margin-top: 9px; }
 .mes .barra span { display: block; width: 26%; height: 100%; background: var(--run); border-radius: 2px; }
 .mes .rodape { display: flex; align-items: center; margin-top: 9px; padding-top: 8px; border-top: 1px solid var(--line); }
+/* com a barra de progresso (mês atual) ela já separa o rodapé: sem a linha, como no app */
+.mes .barra + .rodape { border-top: 0; padding-top: 0; margin-top: 6px; }
 .mes .rodape .ant { transform: rotate(180deg); }
 .mes .rodape .apagada { opacity: .3; }
 .mes .rodape span { flex: 1; display: flex; align-items: center; justify-content: center; gap: 5px; font-size: 10px; color: var(--ink-dim); }
