@@ -124,19 +124,7 @@ header nav a:hover { color: var(--ink); }
 .locais em { display: block; font: normal 9px var(--mono); }
 .locais .on { color: var(--ink); font-weight: 700; border-color: var(--run); }
 .locais .on svg { fill: var(--run); }
-/* Barra dos meses (dois à vista, o escolhido em branco com o calendário verde) e o Enviar, nas colunas dos locais */
-.linha-meses { display: grid; grid-template-columns: 2fr 1fr; grid-gap: 7px; gap: 7px; margin-top: 10px; }
-.meses { display: flex; align-items: center; height: 30px; padding: 0 3px; border-radius: 11px; position: relative; }
-.meses .ant { transform: rotate(180deg); }
-.meses .apagada { opacity: .3; }
-.meses::after { content: ""; position: absolute; left: 50%; top: 9px; width: 1px; height: 12px; background: #2C384A; }
-.mes-r { flex: 1; display: flex; align-items: center; justify-content: center; gap: 4px; font-size: 10px; letter-spacing: .04em; color: var(--ink-dim); }
-.mes-r svg { width: 11px; height: 11px; fill: var(--ink-dim); }
-.mes-r.on { color: var(--ink); font-weight: 700; }
-.mes-r.on svg { fill: var(--run); }
-.enviar { height: 30px; border-radius: 11px; display: flex; align-items: center; justify-content: center; gap: 6px; font-size: 11px; font-weight: 700; color: var(--ink); }
-.enviar svg { width: 12px; height: 12px; fill: var(--amber); }
-/* Cartão do mês: horas grandes, valor e previsão, HOJE à direita e a barra até a previsão */
+/* Cartão do mês: desliza para os lados para trocar de mês; o rodapé tem as setas e o "Toque para gerar relatório" */
 .mes { margin-top: 10px; padding: 11px 14px 12px; }
 .mes .topo { display: flex; justify-content: space-between; }
 .mes small { display: block; font-size: 9px; letter-spacing: .08em; color: var(--ink-dim); font-weight: 500; }
@@ -149,6 +137,11 @@ header nav a:hover { color: var(--ink); }
 .mes .valor small { letter-spacing: 0; }
 .mes .barra { height: 3px; background: var(--bg); border-radius: 2px; margin-top: 9px; }
 .mes .barra span { display: block; width: 26%; height: 100%; background: var(--run); border-radius: 2px; }
+.mes .rodape { display: flex; align-items: center; margin-top: 9px; padding-top: 8px; border-top: 1px solid var(--line); }
+.mes .rodape .ant { transform: rotate(180deg); }
+.mes .rodape .apagada { opacity: .3; }
+.mes .rodape span { flex: 1; display: flex; align-items: center; justify-content: center; gap: 5px; font-size: 10px; color: var(--ink-dim); }
+.mes .rodape span svg { width: 11px; height: 11px; fill: var(--amber); }
 /* Histórico: os registros do dia num cartão só, com a data e o total do dia */
 .hist { margin-top: 10px; padding: 9px 8px 8px; border-radius: 15px; }
 .hist-topo { display: flex; justify-content: space-between; align-items: center; margin: 0 4px 7px; font-size: 12px; }
